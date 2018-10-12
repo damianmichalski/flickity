@@ -1,15 +1,28 @@
 {
   "name": "npm",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:html",
+    "test:html": "globstar nu-html-checker *.html",
+    "init-project": "mkdir sass css vendor images js && touch README.md index.html sass/style.scss js/script.js && curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.24.7"
-  }
+    "autoprefixer-cli": "^1.0.0",
+    "browser-sync": "^2.26.0",
+    "globstar": "^1.0.0",
+    "nu-html-checker": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damianmichalski/flickity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/damianmichalski/flickity/issues"
+  },
+  "homepage": "https://github.com/damianmichalski/flickity#readme",
+  "description": ""
 }
