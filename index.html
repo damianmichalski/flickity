@@ -5,62 +5,40 @@
     <meta charset="UTF-8">
     <title>Flickity</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="vendor/normalize.css" />
     <link rel="stylesheet" href="vendor/flickity.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    
-
-    
-    
 </head>
 
 <body>
-<div class="container">
-            <h1>Flickity</h1>
-            <div class="button-group">
-                <button class="button">Restart</button>
-            </div>
-            <div class="carousel">
-                <div class="carousel-cell container" id="carousel-cell1" style="background-image:url(https://images.pexels.com/photos/1310182/pexels-photo-1310182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800);background-size: cover;"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam beatae id minima voluptatum sed ex numquam eos animi aliquid iste. Odit, possimus eos id similique sunt. Ad, dolor, provident. Fugiat.</p></div>
-                <div class="carousel-cell container" id="carousel-cell2" style="background-image:url(https://images.pexels.com/photos/1310182/pexels-photo-1310182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800);background-size: cover;"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam beatae id minima voluptatum sed ex numquam eos animi aliquid iste. Odit, possimus eos id similique sunt. Ad, dolor, provident. Fugiat.</p></div>
-                <div class="carousel-cell container" id="carousel-cell3" style="background-image:url(https://images.pexels.com/photos/1310182/pexels-photo-1310182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800);background-size: cover;"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam beatae id minima voluptatum sed ex numquam eos animi aliquid iste. Odit, possimus eos id similique sunt. Ad, dolor, provident. Fugiat.</p></div>
-                <div class="carousel-cell container" id="carousel-cell4" style="background-image:url(https://images.pexels.com/photos/1310182/pexels-photo-1310182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800);background-size: cover;"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam beatae id minima voluptatum sed ex numquam eos animi aliquid iste. Odit, possimus eos id similique sunt. Ad, dolor, provident. Fugiat.</p></div>
-                <div class="carousel-cell container" id="carousel-cell5" style="background-image:url(https://images.pexels.com/photos/1310182/pexels-photo-1310182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800);background-size: cover;"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam beatae id minima voluptatum sed ex numquam eos animi aliquid iste. Odit, possimus eos id similique sunt. Ad, dolor, provident. Fugiat.</p></div>
-
-            </div>
-    <div class="progress-bar"></div>
-</div>
-<script>
-    var itemSliders = [
-        {
-            image: 'https://images.pexels.com/photos/1310182/pexels-photo-1310182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800',
-            title: 'Photo placeholder',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        },
-        {
-            image: 'https://images.pexels.com/photos/1310182/pexels-photo-1310182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800',
-            title: 'Photo placeholder',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        },
-        {
-            image: 'https://images.pexels.com/photos/1310182/pexels-photo-1310182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800',
-            title: 'Photo placeholder',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        },
-        {
-            image: 'https://images.pexels.com/photos/1310182/pexels-photo-1310182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800',
-            title: 'Photo placeholder',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        },
-        {
-            image: 'https://images.pexels.com/photos/1310182/pexels-photo-1310182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800',
-            title: 'Photo placeholder',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        }
-
-    ];
+    <div id="page-wrapper" class="container">
+        <h2>Templates tests:</h2>
+        <div id="results"></div>
+    </div>
+    <script id="template-product-list" type="x-tmpl-mustache">
+        <h3>Product list</h3>
+<ul>
+{{{products}}}
+</ul>
 </script>
+    <script id="template-product-item" type="x-tmpl-mustache">
+        <li>Buy {{ name }} for {{ price }}!</li>
+</script>
+    <script>
+    var productsData = [{
+            name: 'Football',
+            price: '$10'
+        },
+        {
+            name: 'Volleyball',
+            price: '$8'
+        },
+        {
+            name: 'Basketball',
+            price: '$12'
+        }
+    ];
+    </script>
     <script src="vendor/flickity.pkgd.min.js"></script>
     <script src="node_modules/mustache/mustache.min.js"></script>
     <script src="js/script.js"></script>
