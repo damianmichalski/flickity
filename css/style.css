@@ -10,15 +10,13 @@ body { font-family: sans-serif; }
   min-height: 250px;
   margin: 10px;
 }
+.carousel-cell img {
 
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-}
-.container p {
-    text-align: center;
-    margin: 150px 15px;
 }
 .button-group {
     position: absolute;
@@ -29,4 +27,14 @@ body { font-family: sans-serif; }
     height: 20px;
     width: 0;
     background: #333;
+}
+.container p {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    color: red;
+}
+.container h1 {
+    position: absolute;
+    left: 15px;
 }

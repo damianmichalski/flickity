@@ -3,45 +3,54 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Flickity</title>
+    <title>Flickity - Mustache</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="vendor/normalize.css" />
-    <link rel="stylesheet" href="vendor/flickity.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="vendor/normalize.css"/>
+    <link rel="stylesheet" href="vendor/flickity.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 
 <body>
-    <div id="page-wrapper" class="container">
-        <h2>Templates tests:</h2>
-        <div id="results"></div>
+
+<div class="container">
+
+    <div class="carousel" id="results">
+
     </div>
-    <script id="template-product-list" type="x-tmpl-mustache">
-        <h3>Product list</h3>
-<ul>
-{{{products}}}
-</ul>
+    <div class="progress-bar"></div>
+    <div class="button-group">
+        <button class="button">Restart</button>
+    </div>
+</div>
+
+<script id="template-slider" type="x-tmpl-mustache">
+    <div class="carousel-cell">
+    <h1>{{title}}</h1>
+    {{{image}}}
+    <p>{{description}}</p>
+    </div>
 </script>
-    <script id="template-product-item" type="x-tmpl-mustache">
-        <li>Buy {{ name }} for {{ price }}!</li>
-</script>
-    <script>
+<script>
     var productsData = [{
-            name: 'Football',
-            price: '$10'
+        image: '<img class="carousel-cell-image" src="https://images.pexels.com/photos/842155/pexels-photo-842155.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200" alt="Photo placeholder">',
+        title: 'title 1',
+        description: 'Lorem ipsum dolor sit amet'
+    },
+        {
+            image: '<img class="carousel-cell-image" src="https://images.pexels.com/photos/842155/pexels-photo-842155.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200" alt="Photo placeholder">',
+            title: 'title 2',
+            description: 'Lorem ipsum dolor sit amet'
         },
         {
-            name: 'Volleyball',
-            price: '$8'
-        },
-        {
-            name: 'Basketball',
-            price: '$12'
+            image: '<img class="carousel-cell-image" src="https://images.pexels.com/photos/842155/pexels-photo-842155.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200" alt="Photo placeholder">',
+            title: 'title 3',
+            description: 'Lorem ipsum dolor sit amet'
         }
     ];
-    </script>
-    <script src="vendor/flickity.pkgd.min.js"></script>
-    <script src="node_modules/mustache/mustache.min.js"></script>
-    <script src="js/script.js"></script>
+</script>
+<script src="vendor/flickity.pkgd.min.js"></script>
+<script src="vendor/mustache.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 </html>
