@@ -55,7 +55,7 @@ window.initMap = function () {
     for (var i = 0; i < productsData.length; i++) {
         var marker = productsData[i].coords;
         var markerNew = new google.maps.Marker({
-            position: new google.maps.LatLng(marker[0][0], marker[0][1]),
+            position: marker,
             map: map
         });
     }
