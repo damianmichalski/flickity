@@ -4,7 +4,7 @@ var templateItem = document.getElementById('template-slider').innerHTML;
 Mustache.parse(templateItem);
 var listItems = '';
 
-for(var i = 0; i < productsData.length; i++){
+for (var i = 0; i < productsData.length; i++) {
     console.log(productsData);
     listItems += Mustache.render(templateItem, productsData[i]);
 }
@@ -32,3 +32,32 @@ flkty.on('scroll', function (progress) {
     progressBar.style.width = progress * 100 + '%';
 });
 
+// Definujemy funkcję initMap w zakresie globalnym (czyli jako właściwość obiektu window).
+window.initMap = function () {
+
+    // Zapisujemy w zmiennej obiekt zawierający współrzędne geograficzne.
+    var uluru = {lat: 52.1535639, lng: 18.2019688};
+
+    // W zmiennej map zapisujemy nową instancję obiektu Map.
+    var map = new google.maps.Map(document.getElementById('map'), {
+        // Podajemy opcje mapy, np. zoom i punkt wycentrowania mapy.
+        zoom: 11,
+        center: uluru
+    });
+
+    // Definiujemy marker jako nową instancję obiektu Marker.
+    var marker = new google.maps.Marker({
+        // I podajemy opcje tego markera, np. na której mapie ma być dodany oraz jakie są jego współrzędne.
+        position: uluru,
+        map: map
+    });
+
+    for (var i = 0; i < productsData.length; i++) {
+        var marker = productsData[i].coords;
+        var markerNew = new google.maps.Marker({
+            position: new google.maps.LatLng(marker[0][0], marker[0][1]),
+            map: map
+        });
+    }
+}
+initMap();

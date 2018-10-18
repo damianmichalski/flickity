@@ -38,3 +38,10 @@ body { font-family: sans-serif; }
     position: absolute;
     left: 15px;
 }
+#map {
+    height: 250px;
+    width: 100%;
+}
+.maps {
+    margin-top:120px;
+}

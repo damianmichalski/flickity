@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Flickity - Mustache</title>
+    <title>Flickity - Mustache - My Google Maps Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vendor/normalize.css"/>
     <link rel="stylesheet" href="vendor/flickity.min.css"/>
@@ -23,34 +23,47 @@
     </div>
 </div>
 
+<div id="page-wrapper" class="container maps">
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+</div>
+
 <script id="template-slider" type="x-tmpl-mustache">
     <div class="carousel-cell">
     <h1>{{title}}</h1>
     <img class="carousel-cell-image" src="{{image}}" alt="{{title}}">
     <p>{{description}}</p>
     </div>
+
 </script>
 <script>
     var productsData = [{
-        image: 'https://images.pexels.com/photos/842155/pexels-photo-842155.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200',
-        title: 'title 1',
-        description: 'Lorem ipsum dolor sit amet'
-    },
+            image: 'https://images.pexels.com/photos/842155/pexels-photo-842155.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200',
+            title: 'title 1',
+            description: 'Lorem ipsum dolor sit amet',
+            coords: [[52.1427829, 18.20509]]
+        },
         {
             image: 'https://images.pexels.com/photos/800244/pexels-photo-800244.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200',
             title: 'title 2',
-            description: 'Lorem ipsum dolor sit amet'
+            description: 'Lorem ipsum dolor sit amet',
+            coords: [[52.1503244, 18.2476999]]
+            //coords: '{lat: "52.1503244", lng: "18.2476999"}'
         },
         {
             image: 'https://images.pexels.com/photos/701449/pexels-photo-701449.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200',
             title: 'title 3',
-            description: 'Lorem ipsum dolor sit amet'
+            description: 'Lorem ipsum dolor sit amet',
+            coords: [[52.1618646, 18.1696623]]
+            //coords: [{lat: "52.1618646", lng: "18.1696623"}]
         }
     ];
 </script>
 <script src="vendor/flickity.pkgd.min.js"></script>
 <script src="vendor/mustache.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2jS1U1XP2q5wmBURw3tyvY0PAjWIBA7E"></script>
 <script src="js/script.js"></script>
+
 </body>
 
 </html>
