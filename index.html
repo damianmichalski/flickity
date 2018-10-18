@@ -26,23 +26,23 @@
 <script id="template-slider" type="x-tmpl-mustache">
     <div class="carousel-cell">
     <h1>{{title}}</h1>
-    {{{image}}}
+    <img class="carousel-cell-image" src="{{image}}" alt="{{title}}">
     <p>{{description}}</p>
     </div>
 </script>
 <script>
     var productsData = [{
-        image: '<img class="carousel-cell-image" src="https://images.pexels.com/photos/842155/pexels-photo-842155.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200" alt="Photo placeholder">',
+        image: 'https://images.pexels.com/photos/842155/pexels-photo-842155.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200',
         title: 'title 1',
         description: 'Lorem ipsum dolor sit amet'
     },
         {
-            image: '<img class="carousel-cell-image" src="https://images.pexels.com/photos/842155/pexels-photo-842155.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200" alt="Photo placeholder">',
+            image: 'https://images.pexels.com/photos/800244/pexels-photo-800244.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200',
             title: 'title 2',
             description: 'Lorem ipsum dolor sit amet'
         },
         {
-            image: '<img class="carousel-cell-image" src="https://images.pexels.com/photos/842155/pexels-photo-842155.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200" alt="Photo placeholder">',
+            image: 'https://images.pexels.com/photos/701449/pexels-photo-701449.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=300&w=1200',
             title: 'title 3',
             description: 'Lorem ipsum dolor sit amet'
         }
