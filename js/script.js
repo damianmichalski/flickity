@@ -1,8 +1,11 @@
-// external js: flickity.pkgd.js+
+'use strict';
+(function(){
 
+var infos = document.getElementById('infos');
 var templateItem = document.getElementById('template-slider').innerHTML;
 Mustache.parse(templateItem);
 var listItems = '';
+
 
 for (var i = 0; i < productsData.length; i++) {
     console.log(productsData);
@@ -52,12 +55,29 @@ window.initMap = function () {
         map: map
     });
 
+    var slideNumber = 0;
+    var loop = function (event) {
+        flkty.selectCell(slideNumber);
+        infos.innerHTML = slideNumber;
+    }
+
+
     for (var i = 0; i < productsData.length; i++) {
-        var marker = productsData[i].coords;
-        var markerNew = new google.maps.Marker({
+
+        marker = productsData[i].coords;
+        var title = productsData[i].title;
+        slideNumber = productsData[i].nr;
+        //console.log(slideNumber);
+        title = new google.maps.Marker({
             position: marker,
             map: map
         });
+        title.addListener('click', loop);
+
     }
+
+
+
 }
+})();
 initMap();
