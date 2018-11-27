@@ -59,8 +59,8 @@
 
         var productsDataArray = Array.from(productsData);
         productsDataArray.forEach(function (button, index) {
-            var cords = productsData[index].coords;
-            var title = productsData[index].title;
+            var cords = button.coords;
+            var title = button.title;
             title = new google.maps.Marker({
                 position: cords,
                 map: map
